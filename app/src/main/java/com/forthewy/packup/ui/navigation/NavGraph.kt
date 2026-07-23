@@ -10,6 +10,8 @@ import androidx.navigation.toRoute
 import com.forthewy.packup.ui.screens.home.HomeScreen
 import com.forthewy.packup.ui.screens.category.CategoryScreen
 import com.forthewy.packup.ui.screens.checklist.CheckListScreen
+import com.forthewy.packup.ui.screens.setting.SettingScreen
+import com.mikepenz.aboutlibraries.ui.compose.m3.LibrariesContainer
 
 @Composable
 fun PackUpNavGraph(
@@ -24,8 +26,22 @@ fun PackUpNavGraph(
             HomeScreen(
                 onStartClick = {
                     navController.navigate(CategoryRoute)
+                },
+                onSettingClick = {
+                    navController.navigate(SettingRoute)
+                },
+                onLicenseClick = {
+                    navController.navigate(LicenseRoute)
                 }
             )
+        }
+
+        composable<SettingRoute>{
+            SettingScreen()
+        }
+
+        composable<LicenseRoute> {
+            LibrariesContainer()
         }
 
         composable<CategoryRoute> {
