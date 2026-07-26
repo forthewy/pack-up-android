@@ -1,23 +1,38 @@
 package com.forthewy.packup.ui.screens.category
 
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Button
-import androidx.compose.material3.Text
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.forthewy.packup.data.model.Category
+import com.forthewy.packup.ui.screens.category.components.CategoryCard
 
 @Composable
 fun CategoryScreen(
-    onCategoryClick: (Int) -> Unit // 클릭 이벤트를 람다식(콜백)으로 상위(NavGraph)로 전달합니다.
+    onCategoryClick: (Category) -> Unit,
+    viewModel: CategoryViewModel = hiltViewModel()
 ) {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+
+    val uiState by viewModel.uiState.collectAsState()
+
+    LazyColumn (
+        modifier = Modifier.fillMaxSize()
     ) {
-        Button(onClick = { onCategoryClick(5) }) { // 임의의 ID인 5를 보냄
-            Text("5번 카테고리로 이동")
+        items(uiState.categories) { item ->
+
+            CategoryCard(
+                title = item.category.name,
+                itemCount = item.itemCount,
+                progress = item.progress,
+                checkedCount = item.checkedCount,
+                        onClick = {
+                    onCategoryClick(item.category)
+                }
+            )
         }
     }
 }

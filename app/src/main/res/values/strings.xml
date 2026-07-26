@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">PackUp</string>
+    <!-- Categories -->
+    <string name="category_travel">여행</string>
+    <string name="category_study">공부</string>
+    <string name="category_shopping">쇼핑</string>
+    <string name="category_move">이사</string>
+    <string name="category_fitness">운동</string>
+    <string name="category_daily">일상</string>
+    <string name="category_work">업무</string>
+    <string name="category_etc">기타</string>
 </resources>

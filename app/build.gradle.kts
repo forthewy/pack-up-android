@@ -75,4 +75,5 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.aboutlibraries.compose.m3)
+    implementation(libs.androidx.compose.material.icons.extended)
 }

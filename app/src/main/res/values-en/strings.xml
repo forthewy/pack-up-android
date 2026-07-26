@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PackUp</string>
+    <!-- Categories -->
+    <string name="category_travel">Travel</string>
+    <string name="category_study">Study</string>
+    <string name="category_shopping">Shopping</string>
+    <string name="category_move">Moving</string>
+    <string name="category_fitness">Fitness</string>
+    <string name="category_daily">Daily</string>
+    <string name="category_work">Work</string>
+    <string name="category_etc">Etc</string>
+</resources>
