@@ -23,22 +23,14 @@ class CategoryViewModel @Inject constructor(
                     categories = list.map {
 
                         val progress =
-                            if (it.totalCount == 0) {
-                                0f
-                            } else {
-                                it.isCheckedCount.toFloat() / it.totalCount
-                            }
+                            if (it.totalCount == 0) 0
+                            else ((it.isCheckedCount.toFloat() / it.totalCount) * 100).roundToInt()
 
                         CategoryItemUiState(
                             category = it.category,
                             itemCount = it.totalCount,
                             checkedCount = it.isCheckedCount,
-                            progress = if (it.totalCount == 0) {
-                                0
-                            } else {
-                                ((it.isCheckedCount.toFloat() / it.totalCount) * 100)
-                                    .roundToInt()
-                            }
+                            progress = progress
                         )
                     }
                 )

@@ -7,6 +7,4 @@ data class CheckListUiState(
     val progress: Int = 0,
     val isLoading: Boolean = false,
     val error: String? = null
-
-
 )

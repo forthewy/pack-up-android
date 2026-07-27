@@ -13,11 +13,25 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface CheckItemDao {
 
+    // ------------- GET------------
     @Query("SELECT * FROM CheckItem")
     fun getAll(): Flow<List<CheckItem>>
 
+    // 카테고리별 아이템
+    @Query("""
+    SELECT *
+    FROM CheckItem
+    WHERE category = :category
+    """)
+    fun getItemsByCategory(
+        category: Category
+    ): Flow<List<CheckItem>>
+
     @Insert
     suspend fun insert(item: CheckItem)
+
+    @Insert
+    suspend fun insertCheckedItems(items: List<CheckItem>)
 
     // 삭제
     @Delete
@@ -31,15 +45,7 @@ interface CheckItemDao {
     @Update
     suspend fun update(item: CheckItem)
 
-    // 카테고리별 아이템
-    @Query("""
-    SELECT *
-    FROM CheckItem
-    WHERE category = :category
-    """)
-    fun getItemsByCategory(
-        category: Category
-    ): Flow<List<CheckItem>>
+
 
     @Query("""
     SELECT COUNT(*)

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="travel_suggestions">
+        <item>@string/travelPassport</item>
+        <item>@string/travelCharger</item>
+        <item>@string/travelPowerBank</item>
+        <item>@string/travelCurrency</item>
+        <item>@string/travelInsurance</item>
+    </string-array>
+
+    <string-array name="study_suggestions">
+        <item>@string/studyPen</item>
+        <item>@string/studyTextbook</item>
+    </string-array>
+
+    <string-array name="shopping_suggestions">
+        <item>@string/shoppingMilk</item>
+        <item>@string/shoppingRice</item>
+        <item>@string/shoppingToiletPaper</item>
+        <item>@string/shoppingDetergent</item>
+        <item>@string/shoppingTrashBags</item>
+    </string-array>
+
+    <string-array name="move_suggestions">
+        <item>@string/moveMold</item>
+        <item>@string/moveDefects</item>
+        <item>@string/moveSize</item>
+        <item>@string/moveFloor</item>
+        <item>@string/moveMoveInDate</item>
+    </string-array>
+
+    <string-array name="fitness_suggestions">
+        <item>@string/fitnessStretching</item>
+        <item>@string/fitnessCardio</item>
+        <item>@string/fitnessUpperBody</item>
+        <item>@string/fitnessLowerBody</item>
+        <item>@string/fitnessCoolDown</item>
+    </string-array>
+
+    <string-array name="daily_suggestions">
+        <item>@string/dailyWakeUp</item>
+        <item>@string/dailyExercise</item>
+        <item>@string/dailyStudy</item>
+        <item>@string/dailyCleaning</item>
+        <item>@string/dailySleep</item>
+    </string-array>
+
+    <string-array name="work_suggestions">
+        <item>@string/workLaptop</item>
+        <item>@string/workUsb</item>
+    </string-array>
+
+    <string-array name="etc_suggestions">
+        <item>@string/etcPhone</item>
+        <item>@string/etcWallet</item>
+        <item>@string/etcKeys</item>
+        <item>@string/etcEarphones</item>
+        <item>@string/etcCharger</item>
+    </string-array>
+
+</resources>

@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">PackUp</string>
+    <!-- UI -->
+    <string name="suggestions">추천 목록</string>
+    <string name="add">추가</string>
+    <string name="cancel">취소</string>
+
     <!-- Categories -->
     <string name="category_travel">여행</string>
     <string name="category_study">공부</string>
@@ -9,4 +14,47 @@
     <string name="category_daily">일상</string>
     <string name="category_work">업무</string>
     <string name="category_etc">기타</string>
+
+    <!-- suggestion items -->
+    <string name="travelPassport">여권</string>
+    <string name="travelCharger">충전기</string>
+    <string name="travelPowerBank">보조배터리</string>
+    <string name="travelCurrency">환전</string>
+    <string name="travelInsurance">여행자 보험</string>
+
+    <string name="studyPen">필기구</string>
+    <string name="studyTextbook">교재</string>
+
+    <string name="shoppingMilk">우유</string>
+    <string name="shoppingRice">쌀</string>
+    <string name="shoppingToiletPaper">휴지</string>
+    <string name="shoppingDetergent">세제</string>
+    <string name="shoppingTrashBags">쓰레기봉투</string>
+
+    <string name="moveMold">곰팡이 확인</string>
+    <string name="moveDefects">하자 확인</string>
+    <string name="moveSize">방 크기 확인</string>
+    <string name="moveFloor">층수 확인</string>
+    <string name="moveMoveInDate">입주일 확인</string>
+
+    <string name="fitnessStretching">스트레칭</string>
+    <string name="fitnessCardio">유산소 운동</string>
+    <string name="fitnessUpperBody">상체 운동</string>
+    <string name="fitnessLowerBody">하체 운동</string>
+    <string name="fitnessCoolDown">마무리 운동</string>
+
+    <string name="dailyWakeUp">일찍 일어나기</string>
+    <string name="dailyExercise">운동</string>
+    <string name="dailyStudy">공부</string>
+    <string name="dailyCleaning">청소</string>
+    <string name="dailySleep">일찍 자기</string>
+
+    <string name="workLaptop">노트북</string>
+    <string name="workUsb">USB</string>
+
+    <string name="etcPhone">휴대폰</string>
+    <string name="etcWallet">지갑</string>
+    <string name="etcKeys">열쇠</string>
+    <string name="etcEarphones">이어폰</string>
+    <string name="etcCharger">충전기</string>
 </resources>

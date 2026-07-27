@@ -22,8 +22,14 @@ class CheckItemRepository @Inject constructor(
         return dao.getItemsByCategory(category)
     }
 
+    // 추가
     suspend fun insert(item: CheckItem) {
         dao.insert(item)
+    }
+
+    // 체크된 아이템 추가
+    suspend fun insertCheckedItems(items: List<CheckItem>) {
+        dao.insertCheckedItems(items)
     }
 
     suspend fun update(item: CheckItem) {
@@ -36,7 +42,9 @@ class CheckItemRepository @Inject constructor(
     }
 
     // 해당 카테고리 전체 삭제
-    suspend fun deleteAllByCategory(category: Category)
+    suspend fun deleteAllByCategory(category: Category) {
+        dao.deleteAllByCategory(category)
+    }
     
     
     fun getItemCount(

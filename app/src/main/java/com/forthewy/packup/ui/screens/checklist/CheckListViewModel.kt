@@ -2,7 +2,6 @@ package com.forthewy.packup.ui.screens.checklist
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.forthewy.packup.data.local.entity.CheckItem
 import com.forthewy.packup.data.model.Category
 import com.forthewy.packup.data.repository.CheckItemRepository
@@ -12,7 +11,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -44,13 +42,15 @@ class CheckListViewModel @Inject constructor(
 
     fun addItem(
         category: Category,
-        title: String
+        title: String,
+        parentId: Int? = null
     ) {
         viewModelScope.launch {
             repository.insert(
                 CheckItem(
                     category = category,
-                    title = title
+                    title = title,
+                    parentId = parentId
                 )
             )
         }
@@ -71,6 +71,27 @@ class CheckListViewModel @Inject constructor(
 
     // 해당 카테고리 전체 삭제
     fun deleteAll(category: Category) {
+        viewModelScope.launch {
+            repository.deleteAllByCategory(category)
+        }
+    }
 
+    // 추천 리스트에서 체크된 아이템 추가
+    fun addCheckedSuggestedItems(
+        category: Category,
+        titles: List<String>,
+    ) {
+        viewModelScope.launch {
+
+            val items = titles.map {
+                CheckItem(
+                    category = category,
+                    title = it
+                    // parentId는 모두 null
+                )
+            }
+
+            repository.insertCheckedItems(items)
+        }
     }
 }

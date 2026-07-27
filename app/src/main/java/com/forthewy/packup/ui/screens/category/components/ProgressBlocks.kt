@@ -11,11 +11,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
+import com.forthewy.packup.ui.theme.CategoryIconTint
+import com.forthewy.packup.ui.theme.ProgressComplete
 
 @Composable
 fun ProgressBlocks(
     progress : Int
 ) {
+    val progressColor =
+        if (progress == 100)
+            ProgressComplete
+        else
+            CategoryIconTint
+
     Row(
         horizontalArrangement = Arrangement.spacedBy(2.dp)
     ) {
@@ -23,11 +31,11 @@ fun ProgressBlocks(
             Box(
                 modifier = Modifier
                     .weight(1f)
-                    .height(6.dp)
+                    .height(8.dp)
                     .clip(RoundedCornerShape(2.dp))
                     .background(
                         if (index < progress / 10)
-                            MaterialTheme.colorScheme.primary
+                            progressColor
                         else
                             MaterialTheme.colorScheme.outlineVariant
                     )

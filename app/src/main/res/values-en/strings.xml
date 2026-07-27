@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">PackUp</string>
+    <!-- UI -->
+    <string name="suggestions">Suggestions</string>
+    <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
+
     <!-- Categories -->
     <string name="category_travel">Travel</string>
     <string name="category_study">Study</string>
@@ -9,4 +14,47 @@
     <string name="category_daily">Daily</string>
     <string name="category_work">Work</string>
     <string name="category_etc">Etc</string>
+
+    <!-- Suggestion items -->
+    <string name="travelPassport">Passport</string>
+    <string name="travelCharger">Charger</string>
+    <string name="travelPowerBank">Power Bank</string>
+    <string name="travelCurrency">Currency Exchange</string>
+    <string name="travelInsurance">Travel Insurance</string>
+
+    <string name="studyPen">Pen</string>
+    <string name="studyTextbook">Textbook</string>
+
+    <string name="shoppingMilk">Milk</string>
+    <string name="shoppingRice">Rice</string>
+    <string name="shoppingToiletPaper">Toilet Paper</string>
+    <string name="shoppingDetergent">Detergent</string>
+    <string name="shoppingTrashBags">Trash Bags</string>
+
+    <string name="moveMold">Check for Mold</string>
+    <string name="moveDefects">Check for Defects</string>
+    <string name="moveSize">Check Room Size</string>
+    <string name="moveFloor">Check Floor Level</string>
+    <string name="moveMoveInDate">Confirm Move-in Date</string>
+
+    <string name="fitnessStretching">Stretching</string>
+    <string name="fitnessCardio">Cardio</string>
+    <string name="fitnessUpperBody">Upper Body Workout</string>
+    <string name="fitnessLowerBody">Lower Body Workout</string>
+    <string name="fitnessCoolDown">Cool Down</string>
+
+    <string name="dailyWakeUp">Wake Up Early</string>
+    <string name="dailyExercise">Exercise</string>
+    <string name="dailyStudy">Study</string>
+    <string name="dailyCleaning">Cleaning</string>
+    <string name="dailySleep">Go to Bed Early</string>
+
+    <string name="workLaptop">Laptop</string>
+    <string name="workUsb">USB Drive</string>
+
+    <string name="etcPhone">Phone</string>
+    <string name="etcWallet">Wallet</string>
+    <string name="etcKeys">Keys</string>
+    <string name="etcEarphones">Earphones</string>
+    <string name="etcCharger">Charger</string>
 </resources>
