@@ -11,15 +11,19 @@ import javax.inject.Inject
 class CheckItemRepository @Inject constructor(
     private val dao: CheckItemDao
 ) {
-
-
-    fun getAllItems(): Flow<List<CheckItem>> {
-        return dao.getAll()
-    }
-
+    // ---- GET -------
     // 카테고리별 아이템
     fun getItemsByCategory(category: Category): Flow<List<CheckItem>> {
         return dao.getItemsByCategory(category)
+    }
+
+    // 자식 아이템
+    suspend fun getChildren(parentId: Int): List<CheckItem> {
+        return dao.getChildren(parentId)
+    }
+
+    suspend fun getItemById(id: Int): CheckItem? {
+        return dao.getItemById(id)
     }
 
     // 추가
@@ -36,9 +40,13 @@ class CheckItemRepository @Inject constructor(
         dao.update(item)
     }
 
-    // 삭제
+    // ------- DELETE -----------
     suspend fun delete(item: CheckItem) {
         dao.delete(item)
+    }
+
+    suspend fun deleteChildrenByParentId(parentId: Int) {
+        dao.deleteChildrenByParentId(parentId)
     }
 
     // 해당 카테고리 전체 삭제

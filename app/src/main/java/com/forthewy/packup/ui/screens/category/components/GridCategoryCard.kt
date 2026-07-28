@@ -19,6 +19,9 @@ import com.forthewy.packup.data.model.Category
 import com.forthewy.packup.ui.extensions.icon
 import com.forthewy.packup.ui.extensions.titleRes
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CardDefaults
@@ -35,7 +38,7 @@ fun GridCategoryCard(
 ) {
     Card(
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxWidth()
             .clickable(onClick = onClick),
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(
@@ -50,11 +53,12 @@ fun GridCategoryCard(
             CategoryCardBorder
         )
     ) {
-
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(vertical = 8.dp),
         ) {
             Icon(
                 imageVector = category.icon(),

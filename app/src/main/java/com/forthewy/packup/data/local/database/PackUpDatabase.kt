@@ -13,6 +13,7 @@ import com.forthewy.packup.data.local.entity.CheckItem
     version = 1,
     exportSchema = false
 )
+
 @TypeConverters(CategoryConverter::class)
 abstract class PackUpDatabase : RoomDatabase() {
 

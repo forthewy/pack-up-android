@@ -56,15 +56,83 @@ class CheckListViewModel @Inject constructor(
         }
     }
 
+    // 수정
     fun updateItem(item: CheckItem) {
         viewModelScope.launch {
             repository.update(item)
         }
     }
 
+    // 부모체크시 자식도 체크
+    fun toggleParent(
+        parent: CheckItem,
+        checked: Boolean
+    ) {
+        viewModelScope.launch {
+
+            repository.update(
+                parent.copy(isChecked = checked)
+            )
+
+            val children = repository.getChildren(parent.id)
+
+            children.forEach { child ->
+                repository.update(
+                    child.copy(isChecked = checked)
+                )
+            }
+        }
+    }
+
+    fun toggleChild(child: CheckItem, checked: Boolean) {
+        viewModelScope.launch {
+            repository.update(
+                child.copy(isChecked = checked)
+            )
+
+            child.parentId?.let { parentId ->
+                updateParentCheckState(
+                    parentId,
+                    child.id,
+                    checked
+                )
+            }
+        }
+    }
+
+    private suspend fun updateParentCheckState(
+        parentId: Int,
+        changedChildId: Int,
+        checked: Boolean
+    ) {
+        val siblings = _uiState.value.items
+            .filter { it.parentId == parentId }
+
+        val allChecked = siblings.all {
+            if (it.id == changedChildId) {
+                checked
+            } else {
+                it.isChecked
+            }
+        }
+        val parent = repository.getItemById(parentId) ?: return
+
+        repository.update(
+            parent.copy(isChecked = allChecked)
+        )
+
+
+    }
+
+    // ---------- DELETE ----------------
+
     // 삭제
     fun deleteItem(item: CheckItem) {
         viewModelScope.launch {
+            if (item.parentId == null) {
+                repository.deleteChildrenByParentId(item.id)
+            }
+
             repository.delete(item)
         }
     }

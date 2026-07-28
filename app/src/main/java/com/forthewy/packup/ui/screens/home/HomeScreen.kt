@@ -13,7 +13,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AccessAlarm
+import androidx.compose.material.icons.filled.Luggage
 import androidx.compose.material.icons.filled.Policy
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Button
@@ -26,10 +26,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.forthewy.packup.ui.theme.CategoryIconTint
+import com.forthewy.packup.ui.theme.CategoryText
 
 @Composable
 fun HomeScreen(
@@ -46,9 +49,10 @@ fun HomeScreen(
     ) {
 
         Icon(
-            imageVector = Icons.Default.AccessAlarm,
+            imageVector = Icons.Default.Luggage,
             contentDescription = null,
-            modifier = Modifier.size(96.dp)
+            modifier = Modifier.size(96.dp),
+            tint = CategoryIconTint
         )
 
         Spacer(Modifier.height(24.dp))
@@ -59,13 +63,7 @@ fun HomeScreen(
                 fontWeight = FontWeight.Bold,
                 fontSize = 32.sp
             ),
-            color = MaterialTheme.colorScheme.onSurface
-        )
-
-        Text(
-            text = "Never forget again",
-            style = MaterialTheme.typography.bodyLarge,
-            color = Color.Gray
+            color = CategoryText,
         )
 
         Spacer(Modifier.height(20.dp))
@@ -88,8 +86,8 @@ fun HomeScreen(
                 .height(56.dp),
             shape = RoundedCornerShape(16.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = MaterialTheme.colorScheme.primaryContainer,
-                contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+                containerColor = CategoryIconTint,
+                contentColor = Color.White
             )
         ) {
             Text(
@@ -115,10 +113,10 @@ fun HomeScreen(
                     imageVector = Icons.Default.Settings,
                     contentDescription = null,
                     modifier = Modifier.size(18.dp),
-                    tint = MaterialTheme.colorScheme.onSurfaceVariant
+                    tint = CategoryText
                 )
                 Spacer(Modifier.width(4.dp))
-                Text("Settings")
+                Text("Settings", style = TextStyle(color = CategoryText))
             }
 
             TextButton(
@@ -128,10 +126,10 @@ fun HomeScreen(
                     imageVector = Icons.Default.Policy, // 또는 Gavel
                     contentDescription = null,
                     modifier = Modifier.size(18.dp),
-                    tint = MaterialTheme.colorScheme.onSurfaceVariant
+                    tint = CategoryText
                 )
                 Spacer(Modifier.width(4.dp))
-                Text("Licenses")
+                Text("Licenses", style = TextStyle(color = CategoryText))
             }
         }
     }

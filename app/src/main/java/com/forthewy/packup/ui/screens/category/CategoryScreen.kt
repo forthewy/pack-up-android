@@ -27,6 +27,7 @@ fun CategoryScreen(
     val uiState by viewModel.uiState.collectAsState()
 
     Scaffold(
+        // 앱바 
         topBar = {
             CenterAlignedTopAppBar(
                 title = {
@@ -41,6 +42,7 @@ fun CategoryScreen(
                 .fillMaxSize()
                 .padding(padding)
         ) {
+            // 상단 그리드 메뉴
             item {
                 CategoryGrid(
                     onCategoryClick = onCategoryClick
